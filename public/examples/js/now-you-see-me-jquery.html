@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Now You See Me</title>
+    </head>
+    
+    <body>
+        <img src ="images/now-you-see-me.png" />
+        
+        <div>
+            <button id="hide">Hide the Cat</button>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+        
+            let image = $("img");
+            let button = $("#hide");
+            
+            //let button = document.getElementById("hide");
+            //let image = document.getElementsByTagName("img")[0];
+            
+            // button.addEventListener('click', function(e) {
+                
+            //     console.log('event', e);
+                
+            //     image.setAttribute('src', 'images/now-you-dont.png')
+            // })
+            
+            button.on('click', function(e) {
+                console.log(image)
+                image.get(0).setAttribute('src', 'images/now-you-dont.png');
+            });
+            
+            
+            
+            $("#remove")
+            .on('click', onRemoveClick)
+            .on('touchstart', onRemoveClick)
+            .html('Removed, baby!')
+            
+            function onRemoveClick(e) {
+                image.setAttribute('class', 'hide');
+                images.attr('class', 'hide');
+            }
+            
+            
+        </script>
+        
+    </body>
+</html>

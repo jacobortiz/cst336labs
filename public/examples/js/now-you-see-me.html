@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Now You See Me</title>
+    </head>
+    
+    <body>
+        <img src ="images/now-you-see-me.png" />
+        
+        <div>
+            <button id="hide">Hide the Cat</button>
+        </div>
+        
+        <script>
+            let button = document.getElementById("hide");
+            let image = document.getElementsByTagName("img")[0];
+            
+            button.addEventListener('click', function(e) {
+                
+                console.log('event', e);
+                
+                image.setAttribute('src', 'images/now-you-dont.png')
+                
+            })
+            
+        </script>
+        
+    </body>
+</html>
