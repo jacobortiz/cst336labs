@@ -32,11 +32,11 @@
                 lastResult.style.backgroundColor = 'red';
                 if(userGuess < randomNumber) {
                   lowOrHi.innerHTML = 'Last guess was too low!';
+                } else if(userGuess > 99) {
+                  lowOrHi.innerHTML = 'Number is higher than 99!';
+                  guessCount--;
                 } else if(userGuess > randomNumber) {
                   lowOrHi.innerHTML = 'Last guess was too high!';
-                } else if(userGuess > 99) {
-                    lowOrHi.innerHTML = 'Number is higher than 99!';
-                    guessCount--;
                 }
               }
              
