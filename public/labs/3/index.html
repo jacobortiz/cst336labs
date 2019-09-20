@@ -19,22 +19,18 @@
            //submit quiz button
            $("button").on("click", gradeQuiz);
            
+           displayQ4Choices();
+           
+           function displayQ4Choices() {
+               let q4ChoicesArray = ["Maine", "Rhode Island", "Maryland", "Delaware"];
+               q4ChoicesArray = _.shuffle(q4ChoicesArray);
+           }
+           
            //question 5 images
            $(".q5Choice").on("click", function() {
                $(".q5Choice").css("background","");
                $(this).css("background","rgb(255, 255, 0)");
            });
-           
-           function displayQ4Choices() {
-               
-               let q4ChoicesArr = ["Maine", "Rhode Island", "Maryland", "Delaware"];
-               
-               for (let i = 0; i < q4ChoicesArr.length; i++) {
-                //   $("#q4Choices").append(`<input type="radio" name="q4" id="${q4ChoicesArr[i]}"
-                //   value="${q4ChoicesArr[i]}"> <label for="${q4ChoicesArr[i]}"> ${q4ChoicesArr[i]}</label>`);
-                q4ChoicesArr = _.shuffle(q4ChoicesArr);
-               }
-           }
            
            //functions
            function isFormValid() {
@@ -66,6 +62,7 @@
                    return;
                }
                
+               //variables
                score = 0;
                let q1Response = $("#q1").val().toLowerCase();
                let q2Response = $("#q2").val();
@@ -147,12 +144,8 @@
         <br>
         
         <h3><span id="markImg4"></span> What is the smallest US state?</h3>
-        <!--<input type="radio" name="q4" id="me" value="Maine">    <label for="me">Maine</label>-->
-        <!--<input type="radio" name="q4" id="ri" value="Rhode Island"> <label for="ri">Rhode Island</label>-->
-        <!--<input type="radio" name="q4" id="md" value="Maryland"> <label for="md">Maryland</label>-->
-        <!--<input type="radio" name="q4" id="de" value="Delaware"> <label for="de">Delaware</label>-->
         <div id="q4Choices"></div>
-        <div id="q4Feedback"></div>
+        <div id="q4Feedback"></div> 
         <br><br>
         
         <h3><span id="markImg5">What image is in the Great Seal of the State of California?</span></h3>
