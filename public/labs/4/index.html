@@ -58,9 +58,13 @@
                     data: { "zip": $("#zip").val() },
                     success: function(result, status) {
                         //alert(result);
-                        $("#city").html(result.city);
-                        $("#latitude").html(result.latitude);
-                        $("#longitude").html(result.longitude);
+                        if(!result) {
+                            alert("Area not found");
+                        } else {
+                            $("#city").html(result.city);
+                            $("#latitude").html(result.latitude);
+                            $("#longitude").html(result.longitude);
+                        }
                     }
                 });
             }); // zip
